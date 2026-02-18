@@ -1,0 +1,69 @@
+/* JobLynk Professional Stylesheet - 2026 */
+
+:root {
+    --navy: #020617;
+    --gold: #d4af37;
+    --slate-400: #94a3b8;
+    --slate-800: #1e293b;
+    --glow: rgba(212, 175, 55, 0.2);
+}
+
+body {
+    background-color: var(--navy);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Global Branding */
+.text-gold { color: var(--gold); }
+.border-gold { border-color: var(--gold); }
+.gold-glow { box-shadow: 0 0 20px var(--glow); }
+
+/* Buttons & Links */
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--navy);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b8962d;
+    transform: translateY(-2px);
+}
+
+/* Card Styling */
+.card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--slate-800);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--gold);
+}
+
+/* Form Inputs */
+input, select {
+    background: #0f172a;
+    border: 1px solid var(--slate-800);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    color: white;
+    margin-top: 5px;
+}
+
+input:focus {
+    border-color: var(--gold);
+    outline: none;
+}
