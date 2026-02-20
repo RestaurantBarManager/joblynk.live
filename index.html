@@ -1,238 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOBSLINKED.live – Enterprise Master Build Prompt</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f172a;
-    color: #f8fafc;
-    margin: 0;
-    padding: 40px;
-    line-height: 1.6;
-}
-h1, h2, h3 {
-    color: #facc15;
-}
-section {
-    margin-bottom: 60px;
-    padding: 30px;
-    background: #1e293b;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-ul {
-    padding-left: 20px;
-}
-code {
-    background: #111827;
-    padding: 4px 8px;
-    border-radius: 6px;
-    color: #facc15;
-}
-.highlight {
-    color: #facc15;
-    font-weight: 600;
-}
-</style>
-</head>
-<body>
+# Joblynk.live Deployment Master Guide
 
-<h1>JOBSLINKED.live – Enterprise AI Career Infrastructure Prompt</h1>
+## 1. Local Development
+- Install XAMPP, start Apache & MySQL.
+- Create folder `C:\xampp\htdocs\joblynk` and copy all project files.
+- Create database `joblynk` in phpMyAdmin, import SQL schema.
+- Edit `includes/db.php` with local credentials (root, empty password).
+- Test at `http://localhost/joblynk`.
 
-<section>
-<h2>1. SYSTEM POSITIONING</h2>
-<p><strong>Brand:</strong> JOBSLINKED.live</p>
-<p><strong>Tagline:</strong> Connecting Talent with Opportunity</p>
-<p><strong>Market:</strong> India – Hospitality & Service Industry</p>
-<p><strong>Positioning:</strong> AI-powered structured job documentation & employer access platform.</p>
-</section>
+## 2. GitHub Setup
+- `cd C:\xampp\htdocs\joblynk`
+- `git init`
+- Create `.gitignore` with: includes/db.php, uploads/, .vscode/, *.log
+- `git add .` and `git commit -m "Initial commit"`
+- Create repo on GitHub (no README), then: 
 
-<section>
-<h2>2. BUILD OBJECTIVES</h2>
-<ul>
-<li>Impress within 10 seconds</li>
-<li>Increase trust perception</li>
-<li>Encourage ₹49 / ₹99 plan selection</li>
-<li>Prepare for Gemini backend automation</li>
-<li>Enable employer recurring subscriptions</li>
-<li>Make production-ready for GitHub + Vercel</li>
-</ul>
-</section>
+## 3. Choose Hosting (PHP + MySQL)
+- Sign up at Hostinger, Bluehost, A2 Hosting, etc.
+- Get FTP/cPanel access.
 
-<section>
-<h2>3. FRONTEND ARCHITECTURE</h2>
-<ul>
-<li>HTML5 + Tailwind CSS (CDN)</li>
-<li>Minimal Vanilla JavaScript</li>
-<li>Deep Navy (#0f172a) + Gold (#facc15)</li>
-<li>Fully responsive</li>
-<li>SEO optimized</li>
-<li>WhatsApp CTA visible</li>
-<li>Floating smart chatbot</li>
-</ul>
-</section>
+## 4. Deploy Files
+- **Option A (FTP):** Upload all files except `includes/db.php` to `public_html`.
+- **Option B (Git):** Use cPanel Git Version Control to clone repo into `public_html`.
 
-<section>
-<h2>4. BACKEND ARCHITECTURE</h2>
-<ul>
-<li>Node.js + Express</li>
-<li>Vercel Serverless Functions</li>
-<li>PostgreSQL (Supabase)</li>
-<li>Razorpay Webhook Verification</li>
-<li>Gemini API (server-side only)</li>
-</ul>
+## 5. Remote Database
+- Create database in cPanel, note name/user/password.
+- Import local SQL into remote database.
+- Create `includes/db.php` with remote credentials and upload manually.
 
-<h3>Database Tables</h3>
-<ul>
-<li>users</li>
-<li>candidates</li>
-<li>payments</li>
-<li>resumes</li>
-<li>employers</li>
-<li>subscriptions</li>
-<li>logs</li>
-</ul>
-</section>
+## 6. Permissions
+- Folders: 755, Files: 644.
+- Ensure `uploads/` is writable (755 or 775).
 
-<section>
-<h2>5. GEMINI WORKFLOW</h2>
+## 7. Cron Job (Job Alerts)
+- In cPanel Cron Jobs, add daily command:
+`/usr/bin/php /home/username/public_html/cron/send-alerts.php >> /home/username/logs/alerts.log 2>&1`
 
-<h3>Step 1 – Candidate Submission</h3>
-<p>Frontend → <code>/api/candidate</code> → Save data → Return candidate ID</p>
+## 8. Domain
+- Point domain to hosting (update nameservers or A record).
+- Enable SSL (free via Let's Encrypt).
 
-<h3>Step 2 – Razorpay Webhook</h3>
-<p><code>/api/payment-webhook</code> → Verify signature → Update status → Trigger AI</p>
+## 9. Test Everything
+- Register, login, post jobs, apply, save, review, payments.
 
-<h3>Step 3 – Resume Generation Prompt</h3>
-
-<code>
-Generate a professional ATS-friendly resume for:
-Name: {{fullName}}
-Location: {{location}}
-Position: {{position}}
-Industry: Hospitality / Service India
-Tone: Structured, professional, India-focused
-Length: 1 page
-Format: Clean sections
-</code>
-
-<h3>Outputs:</h3>
-<ul>
-<li>HTML Resume</li>
-<li>PDF (Puppeteer)</li>
-<li>DOCX (docx library)</li>
-</ul>
-</section>
-
-<section>
-<h2>6. CONVERSION PSYCHOLOGY STRUCTURE</h2>
-
-<h3>Hero Section</h3>
-<p class="highlight">Professional Job Support Starting at ₹49</p>
-
-<ul>
-<li>Trust badges</li>
-<li>Razorpay secure payment indicator</li>
-<li>WhatsApp visibility</li>
-<li>Anchor pricing (₹499 → ₹99)</li>
-<li>Urgency indicator (Limited daily slots)</li>
-</ul>
-
-<h3>Checkout Optimization</h3>
-<ul>
-<li>Progress bar: Form → Payment → Delivery</li>
-<li>Reassurance text: “You’re 1 step away from structured job access.”</li>
-</ul>
-</section>
-
-<section>
-<h2>7. EMPLOYER SAAS MODEL</h2>
-
-<h3>Employer Dashboard Features</h3>
-<ul>
-<li>Filter by Role</li>
-<li>Filter by Location</li>
-<li>Download CSV</li>
-<li>Verified Candidate Pool</li>
-<li>Subscription Billing</li>
-</ul>
-
-<h3>Pricing</h3>
-<ul>
-<li>₹999 Monthly</li>
-<li>₹9999 Annual</li>
-</ul>
-</section>
-
-<section>
-<h2>8. DEPLOYMENT STRATEGY</h2>
-
-<h3>Project Structure</h3>
-<code>
-jobslined-live/
-│
-├── frontend/
-├── backend/api/
-├── vercel.json
-└── README.md
-</code>
-
-<h3>Environment Variables</h3>
-<ul>
-<li>GEMINI_API_KEY</li>
-<li>RAZORPAY_KEY</li>
-<li>RAZORPAY_SECRET</li>
-<li>DATABASE_URL</li>
-</ul>
-
-<h3>Deployment Flow</h3>
-<ul>
-<li>Push to GitHub</li>
-<li>Import into Vercel</li>
-<li>Set environment variables</li>
-<li>Attach domain jobslined.live</li>
-<li>Enable Analytics</li>
-</ul>
-</section>
-
-<section>
-<h2>9. SCALE ROADMAP</h2>
-
-<h3>Month 1</h3>
-<ul>
-<li>Launch MVP</li>
-<li>Acquire first 500 users</li>
-<li>Optimize chatbot conversion</li>
-</ul>
-
-<h3>Month 2–3</h3>
-<ul>
-<li>Employer subscriptions</li>
-<li>LinkedIn + Instagram campaigns</li>
-<li>Collect testimonials</li>
-</ul>
-
-<h3>Target Revenue</h3>
-<ul>
-<li>10,000 users × ₹99 = ₹9.9 Lakhs</li>
-<li>200 employers × ₹999 = ₹1,99,800/month</li>
-</ul>
-</section>
-
-<section>
-<h2>10. STRATEGIC FOCUS</h2>
-<ul>
-<li>Micro-pricing</li>
-<li>India-focused niche positioning</li>
-<li>WhatsApp-first conversion</li>
-<li>Human + AI hybrid quality control</li>
-<li>Recurring employer revenue model</li>
-</ul>
-</section>
-
-</body>
-</html>
+## 10. Maintenance
+- Never commit `db.php`.
+- Backup regularly.
+- Pull updates: `git pull origin main` on server (if using Git deployment).
