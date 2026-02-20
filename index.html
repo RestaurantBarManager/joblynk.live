@@ -1,238 +1,923 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JOBSLINKED.live – Enterprise Master Build Prompt</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f172a;
-    color: #f8fafc;
-    margin: 0;
-    padding: 40px;
-    line-height: 1.6;
-}
-h1, h2, h3 {
-    color: #facc15;
-}
-section {
-    margin-bottom: 60px;
-    padding: 30px;
-    background: #1e293b;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-ul {
-    padding-left: 20px;
-}
-code {
-    background: #111827;
-    padding: 4px 8px;
-    border-radius: 6px;
-    color: #facc15;
-}
-.highlight {
-    color: #facc15;
-    font-weight: 600;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joblynk.live – Connecting Talent with Opportunity</title>
+  <meta name="description" content="Affordable job support platform for hospitality and service professionals across India. Structured resumes, cover letters, and curated employer data.">
+  <meta property="og:title" content="Joblynk.live – Connecting Talent with Opportunity">
+  <meta property="og:description" content="Professional job-support platform built for India's service workforce.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    /* Smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 font-sans">
 
-<h1>JOBSLINKED.live – Enterprise AI Career Infrastructure Prompt</h1>
+<!-- NAVBAR (same on all pages) -->
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wide">Joblynk.live</h1>
+    <nav class="hidden md:block space-x-6">
+      <a href="index.html" class="hover:text-yellow-400">Home</a>
+      <a href="pay.html" class="hover:text-yellow-400">Pay Portal</a>
+      <a href="samples.html" class="hover:text-yellow-400">Resume Builder</a>
+      <a href="employer.html" class="hover:text-yellow-400">Employer Portal</a>
+      <a href="disclaimer.html" class="hover:text-yellow-400">Disclaimer</a>
+    </nav>
+    <a href="#pricing" class="bg-yellow-500 text-slate-900 px-4 py-2 rounded font-semibold">Get Started</a>
+  </div>
+</header>
 
-<section>
-<h2>1. SYSTEM POSITIONING</h2>
-<p><strong>Brand:</strong> JOBSLINKED.live</p>
-<p><strong>Tagline:</strong> Connecting Talent with Opportunity</p>
-<p><strong>Market:</strong> India – Hospitality & Service Industry</p>
-<p><strong>Positioning:</strong> AI-powered structured job documentation & employer access platform.</p>
+<!-- HERO SECTION with Indian professional image -->
+<section class="bg-slate-900 text-white py-20 px-6 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Indian professionals" class="w-full h-full object-cover">
+  </div>
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Connecting Talent with Opportunity – Faster, Smarter, Simpler</h2>
+    <p class="text-xl max-w-3xl mx-auto mb-8">Joblynk.live is a professional job-support platform helping candidates connect with employers through structured resumes, cover letters, and curated employer data support across India.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#pricing" class="bg-yellow-500 text-slate-900 px-8 py-3 rounded font-semibold text-lg">Start from ₹49</a>
+      <a href="#" onclick="openChat()" class="border border-yellow-500 px-8 py-3 rounded text-lg">Chat on WhatsApp</a>
+    </div>
+    <p class="mt-8 text-sm text-yellow-300">✔ Trusted by Service Professionals Across India ✔ Fast Delivery ✔ Affordable & Practical</p>
+  </div>
 </section>
 
-<section>
-<h2>2. BUILD OBJECTIVES</h2>
-<ul>
-<li>Impress within 10 seconds</li>
-<li>Increase trust perception</li>
-<li>Encourage ₹49 / ₹99 plan selection</li>
-<li>Prepare for Gemini backend automation</li>
-<li>Enable employer recurring subscriptions</li>
-<li>Make production-ready for GitHub + Vercel</li>
-</ul>
+<!-- PARTNER EMPLOYERS HIGHLIGHT -->
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-2xl font-bold mb-8">Our Partner Employers</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+      <img src="https://via.placeholder.com/150x50?text=Taj+Hotels" alt="Taj Hotels" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=Oberoi" alt="Oberoi" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=ITC+Hotels" alt="ITC Hotels" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=Marriott" alt="Marriott" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=Hyatt" alt="Hyatt" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=Radisson" alt="Radisson" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=Leela" alt="Leela" class="grayscale hover:grayscale-0 transition">
+      <img src="https://via.placeholder.com/150x50?text=WelcomGroup" alt="WelcomGroup" class="grayscale hover:grayscale-0 transition">
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>3. FRONTEND ARCHITECTURE</h2>
-<ul>
-<li>HTML5 + Tailwind CSS (CDN)</li>
-<li>Minimal Vanilla JavaScript</li>
-<li>Deep Navy (#0f172a) + Gold (#facc15)</li>
-<li>Fully responsive</li>
-<li>SEO optimized</li>
-<li>WhatsApp CTA visible</li>
-<li>Floating smart chatbot</li>
-</ul>
+<!-- PROBLEM/SOLUTION SECTION with images -->
+<section class="max-w-6xl mx-auto py-16 px-6">
+  <h3 class="text-3xl font-bold mb-12 text-center">Why Joblynk.live?</h3>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Resume" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+      <h4 class="font-semibold text-xl mb-2">Structured Resume</h4>
+      <p class="text-slate-600">Professional formatting designed for hospitality, operations and service roles.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+      <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Employer contacts" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+      <h4 class="font-semibold text-xl mb-2">Employer Contacts</h4>
+      <p class="text-slate-600">Curated employer data to improve direct application chances.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+      <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Affordable" class="w-32 h-32 object-cover rounded-full mx-auto mb-4">
+      <h4 class="font-semibold text-xl mb-2">Affordable Pricing</h4>
+      <p class="text-slate-600">Micro-priced support starting at just ₹49.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>4. BACKEND ARCHITECTURE</h2>
-<ul>
-<li>Node.js + Express</li>
-<li>Vercel Serverless Functions</li>
-<li>PostgreSQL (Supabase)</li>
-<li>Razorpay Webhook Verification</li>
-<li>Gemini API (server-side only)</li>
-</ul>
-
-<h3>Database Tables</h3>
-<ul>
-<li>users</li>
-<li>candidates</li>
-<li>payments</li>
-<li>resumes</li>
-<li>employers</li>
-<li>subscriptions</li>
-<li>logs</li>
-</ul>
+<!-- HOW IT WORKS -->
+<section class="bg-white py-16 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-8">How It Works</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+        <h4 class="font-semibold">Choose Plan</h4>
+        <p>Select ₹49 or ₹99 support package.</p>
+      </div>
+      <div>
+        <div class="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+        <h4 class="font-semibold">Submit Details</h4>
+        <p>Provide your job role and background.</p>
+      </div>
+      <div>
+        <div class="bg-yellow-500 w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+        <h4 class="font-semibold">Receive Documents</h4>
+        <p>Get structured resume + employer data.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>5. GEMINI WORKFLOW</h2>
-
-<h3>Step 1 – Candidate Submission</h3>
-<p>Frontend → <code>/api/candidate</code> → Save data → Return candidate ID</p>
-
-<h3>Step 2 – Razorpay Webhook</h3>
-<p><code>/api/payment-webhook</code> → Verify signature → Update status → Trigger AI</p>
-
-<h3>Step 3 – Resume Generation Prompt</h3>
-
-<code>
-Generate a professional ATS-friendly resume for:
-Name: {{fullName}}
-Location: {{location}}
-Position: {{position}}
-Industry: Hospitality / Service India
-Tone: Structured, professional, India-focused
-Length: 1 page
-Format: Clean sections
-</code>
-
-<h3>Outputs:</h3>
-<ul>
-<li>HTML Resume</li>
-<li>PDF (Puppeteer)</li>
-<li>DOCX (docx library)</li>
-</ul>
+<!-- JOB ALERT SUBSCRIPTION -->
+<section class="bg-slate-100 py-16 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-4">Get Job Alerts</h3>
+    <p class="mb-6">Subscribe to receive email notifications for new job postings matching your criteria.</p>
+    <form id="jobAlertForm" class="flex flex-col md:flex-row gap-4 justify-center">
+      <input type="email" placeholder="Your Email" class="px-4 py-3 rounded border flex-1" required>
+      <select class="px-4 py-3 rounded border">
+        <option>Hospitality</option>
+        <option>Operations</option>
+        <option>Management</option>
+        <option>Service</option>
+      </select>
+      <input type="text" placeholder="City" class="px-4 py-3 rounded border">
+      <button type="submit" class="bg-slate-900 text-white px-6 py-3 rounded font-semibold">Subscribe</button>
+    </form>
+    <p class="text-sm text-slate-500 mt-2">We'll never spam you. Unsubscribe anytime.</p>
+  </div>
 </section>
 
-<section>
-<h2>6. CONVERSION PSYCHOLOGY STRUCTURE</h2>
-
-<h3>Hero Section</h3>
-<p class="highlight">Professional Job Support Starting at ₹49</p>
-
-<ul>
-<li>Trust badges</li>
-<li>Razorpay secure payment indicator</li>
-<li>WhatsApp visibility</li>
-<li>Anchor pricing (₹499 → ₹99)</li>
-<li>Urgency indicator (Limited daily slots)</li>
-</ul>
-
-<h3>Checkout Optimization</h3>
-<ul>
-<li>Progress bar: Form → Payment → Delivery</li>
-<li>Reassurance text: “You’re 1 step away from structured job access.”</li>
-</ul>
+<!-- TRUST & SUCCESS STORIES -->
+<section class="py-16 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-8 text-center">Success Stories</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 bg-slate-100 rounded-lg">
+        <p class="italic">“Got placed in a hotel chain in Pune within weeks. The resume format made a difference.”</p>
+        <p class="mt-2 font-semibold">– Rahul S., Pune</p>
+      </div>
+      <div class="p-6 bg-slate-100 rounded-lg">
+        <p class="italic">“Clear documentation and professional support helped me switch roles.”</p>
+        <p class="mt-2 font-semibold">– Meena K., Bangalore</p>
+      </div>
+      <div class="p-6 bg-slate-100 rounded-lg">
+        <p class="italic">“Employer contacts shared were relevant and practical.”</p>
+        <p class="mt-2 font-semibold">– Arjun P., Mumbai</p>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Verified Employer</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Hospitality Partner</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Service Industry Recruiter</span>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>7. EMPLOYER SAAS MODEL</h2>
-
-<h3>Employer Dashboard Features</h3>
-<ul>
-<li>Filter by Role</li>
-<li>Filter by Location</li>
-<li>Download CSV</li>
-<li>Verified Candidate Pool</li>
-<li>Subscription Billing</li>
-</ul>
-
-<h3>Pricing</h3>
-<ul>
-<li>₹999 Monthly</li>
-<li>₹9999 Annual</li>
-</ul>
+<!-- PRICING (with Razorpay & GPay) -->
+<section id="pricing" class="py-16 px-6 bg-slate-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-4">Choose Your Plan</h3>
+    <p class="text-sm text-red-600 mb-8">Limited daily slots to ensure quality preparation.</p>
+    <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+      <!-- ₹49 Card -->
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h4 class="text-xl font-bold mb-2">Starter Job Pack</h4>
+        <p class="text-3xl font-bold mb-4">₹49</p>
+        <ul class="mb-6 space-y-2 text-left">
+          <li>✔ Basic resume format</li>
+          <li>✔ Standard cover letter</li>
+          <li>✔ 20 employer contacts</li>
+          <li>✔ Email-ready documents</li>
+        </ul>
+        <button onclick="payNow(49)" class="w-full bg-slate-900 text-white py-3 rounded font-semibold">Select ₹49 Plan</button>
+      </div>
+      <!-- ₹99 Card -->
+      <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-yellow-500 relative">
+        <span class="absolute top-0 right-0 bg-yellow-500 text-slate-900 px-3 py-1 text-sm font-bold">Most Popular</span>
+        <h4 class="text-xl font-bold mb-2">Premium Job Pack</h4>
+        <p class="text-3xl font-bold mb-4">₹99</p>
+        <ul class="mb-6 space-y-2 text-left">
+          <li>✔ Professionally structured resume</li>
+          <li>✔ Custom cover letter</li>
+          <li>✔ Editable Word & PDF</li>
+          <li>✔ Priority delivery</li>
+        </ul>
+        <button onclick="payNow(99)" class="w-full bg-yellow-500 text-slate-900 py-3 rounded font-semibold">Select ₹99 Plan</button>
+      </div>
+    </div>
+    <p class="text-sm mt-6">Secure payment via Razorpay. GPay also accepted: <strong>+91 97693 51231</strong></p>
+  </div>
 </section>
 
-<section>
-<h2>8. DEPLOYMENT STRATEGY</h2>
-
-<h3>Project Structure</h3>
-<code>
-jobslined-live/
-│
-├── frontend/
-├── backend/api/
-├── vercel.json
-└── README.md
-</code>
-
-<h3>Environment Variables</h3>
-<ul>
-<li>GEMINI_API_KEY</li>
-<li>RAZORPAY_KEY</li>
-<li>RAZORPAY_SECRET</li>
-<li>DATABASE_URL</li>
-</ul>
-
-<h3>Deployment Flow</h3>
-<ul>
-<li>Push to GitHub</li>
-<li>Import into Vercel</li>
-<li>Set environment variables</li>
-<li>Attach domain jobslined.live</li>
-<li>Enable Analytics</li>
-</ul>
+<!-- METRICS / INVESTOR SECTION -->
+<section class="py-16 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-8">Our Vision</h3>
+    <p class="max-w-3xl mx-auto mb-8">Our mission is to simplify structured job access for India’s service workforce through ethical, technology-driven support.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-2xl font-bold text-yellow-500">10,000+</h4>
+        <p>Candidates Supported (Target)</p>
+      </div>
+      <div>
+        <h4 class="text-2xl font-bold text-yellow-500">250+</h4>
+        <p>Employer Connections</p>
+      </div>
+      <div>
+        <h4 class="text-2xl font-bold text-yellow-500">Pan-India</h4>
+        <p>Coverage</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2>9. SCALE ROADMAP</h2>
+<!-- FOOTER (same on all pages) -->
+<footer class="bg-slate-900 text-white text-center p-6">
+  <p>Joblynk.live | Career support made practical. | Connecting Employers with Job-Ready Talent.</p>
+</footer>
 
-<h3>Month 1</h3>
-<ul>
-<li>Launch MVP</li>
-<li>Acquire first 500 users</li>
-<li>Optimize chatbot conversion</li>
-</ul>
+<!-- GLOBAL CHATBOT WIDGET (advanced) -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">
+  <button onclick="toggleChat()" class="bg-yellow-500 text-slate-900 p-4 rounded-full shadow-lg hover:scale-105 transition">💬</button>
+  <div id="chatWindow" class="hidden mt-3 w-80 md:w-96 bg-white rounded-xl shadow-2xl border overflow-hidden flex flex-col">
+    <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
+      <h4 class="font-semibold">Joblynk.live Assistant</h4>
+      <select id="languageToggle" class="text-black text-xs rounded p-1">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
+    <div id="chatMessages" class="p-4 space-y-3 h-80 overflow-y-auto text-sm"></div>
+    <div class="p-3 border-t space-y-2">
+      <div class="flex gap-2">
+        <button onclick="selectPlan(49)" class="flex-1 bg-slate-900 text-white py-2 rounded text-sm">₹49 Plan</button>
+        <button onclick="selectPlan(99)" class="flex-1 bg-yellow-500 text-slate-900 py-2 rounded text-sm font-semibold">₹99 Plan</button>
+      </div>
+      <button onclick="toggleEmployerMode()" class="w-full border py-2 rounded text-sm">Switch to Employer Mode</button>
+      <div class="flex gap-2 text-xs">
+        <button onclick="askBot('how update details')" class="bg-slate-200 px-2 py-1 rounded">How to update details?</button>
+        <button onclick="askBot('plan benefits')" class="bg-slate-200 px-2 py-1 rounded">Plan benefits?</button>
+        <button onclick="askBot('payment options')" class="bg-slate-200 px-2 py-1 rounded">Payment options?</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<h3>Month 2–3</h3>
-<ul>
-<li>Employer subscriptions</li>
-<li>LinkedIn + Instagram campaigns</li>
-<li>Collect testimonials</li>
-</ul>
+<script>
+  // ================= CHATBOT GLOBAL =================
+  let employerMode = false;
+  let chatVisible = false;
+  const chatMessages = document.getElementById('chatMessages');
+  const langToggle = document.getElementById('languageToggle');
 
-<h3>Target Revenue</h3>
-<ul>
-<li>10,000 users × ₹99 = ₹9.9 Lakhs</li>
-<li>200 employers × ₹999 = ₹1,99,800/month</li>
-</ul>
+  function t(en, hi) {
+    return langToggle.value === 'hi' ? hi : en;
+  }
+
+  function toggleChat() {
+    const win = document.getElementById('chatWindow');
+    win.classList.toggle('hidden');
+    if (!win.classList.contains('hidden') && chatMessages.children.length === 0) {
+      // Initial greeting
+      addMessage(t("Hello! I am your Joblynk.live assistant. How can I help you today?", "नमस्ते! मैं आपका Joblynk.live सहायक हूँ। आज मैं आपकी कैसे मदद कर सकता हूँ?"), true);
+    }
+  }
+
+  function addMessage(text, isBot = true) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isBot ? 'bg-slate-100 p-2 rounded' : 'bg-yellow-100 p-2 rounded text-right';
+    msgDiv.innerText = text;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function typingEffect(text, callback) {
+    let i = 0;
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'bg-slate-100 p-2 rounded';
+    chatMessages.appendChild(typingDiv);
+    const interval = setInterval(() => {
+      typingDiv.innerText += text.charAt(i);
+      i++;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      if (i >= text.length) {
+        clearInterval(interval);
+        if (callback) callback();
+      }
+    }, 25);
+  }
+
+  function selectPlan(amount) {
+    localStorage.setItem('selectedPlan', amount);
+    addMessage(`You selected ₹${amount} Plan.`, false);
+    trackConversion(`plan_selected_${amount}`);
+    // Proactive suggestion
+    if (amount === 49) {
+      typingEffect(t("Great choice! You can upgrade to Premium anytime for editable documents.", "बढ़िया विकल्प! आप कभी भी एडिटेबल दस्तावेज़ों के लिए प्रीमियम में अपग्रेड कर सकते हैं।"));
+    } else {
+      typingEffect(t("Excellent! You'll get priority delivery and custom edits.", "बहुत बढ़िया! आपको प्राथमिकता डिलीवरी और कस्टम एडिट मिलेंगे।"));
+    }
+  }
+
+  function toggleEmployerMode() {
+    employerMode = !employerMode;
+    if (employerMode) {
+      typingEffect(t("Employer mode activated. You can request candidate list access.", "एम्प्लॉयर मोड सक्रिय किया गया। आप उम्मीदवार सूची का अनुरोध कर सकते हैं।"));
+    } else {
+      typingEffect(t("Switched back to Candidate mode.", "उम्मीदवार मोड में वापस आ गए हैं।"));
+    }
+  }
+
+  function askBot(query) {
+    let response = '';
+    if (query.includes('update details')) {
+      response = t("You can update your details in the Pay Portal form before payment. After payment, please contact support.", "आप भुगतान से पहले पे पोर्टल फॉर्म में अपना विवरण अपडेट कर सकते हैं। भुगतान के बाद, कृपया सहायता से संपर्क करें।");
+    } else if (query.includes('plan benefits')) {
+      response = t("Starter: basic resume, cover letter, 20 employer contacts. Premium: professionally structured resume, custom cover letter, editable formats, priority delivery.", "स्टार्टर: बेसिक रिज्यूमे, कवर लेटर, 20 नियोक्ता संपर्क। प्रीमियम: प्रोफेशनल रिज्यूमे, कस्टम कवर लेटर, एडिटेबल फॉर्मेट, प्राथमिकता डिलीवरी।");
+    } else if (query.includes('payment')) {
+      response = t("We accept Razorpay (cards, UPI, netbanking) and GPay at +91 97693 51231.", "हम Razorpay (कार्ड, यूपीआई, नेटबैंकिंग) और GPay +91 97693 51231 स्वीकार करते हैं।");
+    } else {
+      response = t("I'm here to help! Ask about plans, payment, or employer access.", "मैं मदद के लिए यहाँ हूँ! योजनाओं, भुगतान या नियोक्ता पहुंच के बारे में पूछें।");
+    }
+    typingEffect(response);
+  }
+
+  function trackConversion(event) {
+    console.log('Conversion:', event);
+    // You can send to Google Analytics or n8n webhook here
+  }
+
+  // Payment function (Razorpay)
+  function payNow(amount) {
+    var options = {
+      "key": "YOUR_RAZORPAY_KEY", // Replace with your live key
+      "amount": amount * 100,
+      "currency": "INR",
+      "name": "Joblynk.live",
+      "description": "Job Support Service",
+      "handler": function (response) {
+        alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+        trackConversion("payment_success_" + amount);
+      },
+      "theme": { "color": "#f59e0b" }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  }
+
+  // Job Alert Form handler
+  document.getElementById('jobAlertForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for subscribing! You will receive job alerts soon.');
+  });
+</script>
+
+<!-- Include chat toggle function for global use -->
+<script>
+  function openChat() {
+    document.getElementById('chatWindow').classList.remove('hidden');
+    toggleChat(); // ensure it opens
+  }
+</script>
+
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pay Portal - Joblynk.live</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<!-- NAVBAR (same) -->
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wide">Joblynk.live</h1>
+    <nav class="hidden md:block space-x-6">
+      <a href="index.html" class="hover:text-yellow-400">Home</a>
+      <a href="pay.html" class="hover:text-yellow-400">Pay Portal</a>
+      <a href="samples.html" class="hover:text-yellow-400">Resume Builder</a>
+      <a href="employer.html" class="hover:text-yellow-400">Employer Portal</a>
+      <a href="disclaimer.html" class="hover:text-yellow-400">Disclaimer</a>
+    </nav>
+    <a href="#pricing" class="bg-yellow-500 text-slate-900 px-4 py-2 rounded font-semibold">Get Started</a>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<section class="max-w-4xl mx-auto py-16 px-6">
+  <h2 class="text-3xl font-bold mb-8 text-center">Candidate Information</h2>
+  <form id="candidateForm" class="bg-white p-8 rounded shadow-md space-y-6">
+    <input type="text" id="fullName" placeholder="Full Name" required class="w-full p-3 border rounded">
+    <input type="email" id="email" placeholder="Email Address" required class="w-full p-3 border rounded">
+    <input type="tel" id="mobile" placeholder="Mobile Number" required class="w-full p-3 border rounded">
+    <input type="text" id="location" placeholder="Location (City & State)" required class="w-full p-3 border rounded">
+    <input type="text" id="position" placeholder="Position Applied For" required class="w-full p-3 border rounded">
+    <button type="submit" class="w-full bg-yellow-500 text-slate-900 font-semibold py-3 rounded">Submit & Save Details</button>
+  </form>
+
+  <h2 class="text-3xl font-bold mt-16 mb-8 text-center">Choose Your Plan</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- ₹49 -->
+    <div class="bg-white p-8 rounded shadow">
+      <h3 class="text-xl font-bold mb-2">Starter Job Pack</h3>
+      <p class="text-3xl font-bold mb-4">₹49</p>
+      <ul class="space-y-2 mb-6">
+        <li>✔ Basic resume format</li>
+        <li>✔ Standard cover letter</li>
+        <li>✔ List of 20 employer contacts</li>
+        <li>✔ Email-ready documents</li>
+        <li>✔ 1-time delivery</li>
+      </ul>
+      <button onclick="payNow(49)" class="w-full bg-slate-900 text-white py-3 rounded">Select ₹49 Plan</button>
+    </div>
+    <!-- ₹99 -->
+    <div class="bg-white p-8 rounded shadow border-2 border-yellow-500 relative">
+      <span class="absolute top-0 right-0 bg-yellow-500 text-slate-900 px-3 py-1 text-sm font-bold">Most Popular</span>
+      <h3 class="text-xl font-bold mb-2">Premium Job Pack</h3>
+      <p class="text-3xl font-bold mb-4">₹99</p>
+      <ul class="space-y-2 mb-6">
+        <li>✔ Professionally structured resume</li>
+        <li>✔ Customised cover letter</li>
+        <li>✔ 20 curated employer contacts</li>
+        <li>✔ Editable Word & PDF formats</li>
+        <li>✔ Priority delivery</li>
+        <li>✔ Minor custom edits included</li>
+      </ul>
+      <button onclick="payNow(99)" class="w-full bg-yellow-500 text-slate-900 py-3 rounded font-semibold">Select ₹99 Plan</button>
+    </div>
+  </div>
+  <p class="text-sm text-center mt-8">Payments are for document preparation and data support services only. GPay also accepted: <strong>+91 97693 51231</strong></p>
 </section>
 
-<section>
-<h2>10. STRATEGIC FOCUS</h2>
-<ul>
-<li>Micro-pricing</li>
-<li>India-focused niche positioning</li>
-<li>WhatsApp-first conversion</li>
-<li>Human + AI hybrid quality control</li>
-<li>Recurring employer revenue model</li>
-</ul>
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-white text-center p-6">
+  <p>Joblynk.live | Career support made practical. | Connecting Employers with Job-Ready Talent.</p>
+</footer>
+
+<!-- CHATBOT (same as index) -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">...</div> <!-- copy from index, same JS -->
+
+<script>
+  // Candidate form save to localStorage
+  document.getElementById('candidateForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = {
+      fullName: document.getElementById('fullName').value,
+      email: document.getElementById('email').value,
+      mobile: document.getElementById('mobile').value,
+      location: document.getElementById('location').value,
+      position: document.getElementById('position').value
+    };
+    localStorage.setItem('joblynkCandidate', JSON.stringify(data));
+    alert('Details saved successfully. You can now select a plan.');
+  });
+
+  // Razorpay function (same)
+  function payNow(amount) {
+    var options = {
+      "key": "YOUR_RAZORPAY_KEY",
+      "amount": amount * 100,
+      "currency": "INR",
+      "name": "Joblynk.live",
+      "description": "Job Support Service",
+      "handler": function (response) {
+        alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+        trackConversion("payment_success_" + amount);
+      },
+      "theme": { "color": "#f59e0b" }
+    };
+    var rzp = new Razorpay(options);
+    rzp.open();
+  }
+
+  // Copy chatbot JS from index (including toggleChat, t, etc.)
+</script>
+
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer - Joblynk.live</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-2xl font-bold tracking-wide">Joblynk.live</h1>
+    <nav class="hidden md:block space-x-6">
+      <a href="index.html">Home</a>
+      <a href="pay.html">Pay Portal</a>
+      <a href="samples.html">Resume Builder</a>
+      <a href="employer.html">Employer Portal</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </div>
+</header>
+
+<section class="max-w-4xl mx-auto py-16 px-6 space-y-8">
+  <h2 class="text-3xl font-bold">Disclaimer</h2>
+  <p>Joblynk.live is a job-support and documentation service. We do not guarantee interviews, job offers, or employment. Final hiring decisions are made by employers only.</p>
+
+  <h2 class="text-3xl font-bold">No Refund Policy</h2>
+  <p>All payments are non-refundable. Once a service is initiated, no refunds will be processed. Users must review details before payment.</p>
+
+  <h2 class="text-3xl font-bold">User Responsibility</h2>
+  <p>Users must provide accurate information. Joblynk.live is not responsible for incorrect details submitted. Documents are prepared based on user input.</p>
+
+  <h2 class="text-3xl font-bold">Data Usage</h2>
+  <p>User data is used only for service delivery. No data is sold or misused. Data may be shared with employers only for job-related purposes.</p>
+
+  <p class="font-semibold">By using this website, you agree to these terms and conditions.</p>
 </section>
+
+<footer class="bg-slate-900 text-white text-center p-6">
+  <p>Joblynk.live | Career support made practical. | Connecting Employers with Job-Ready Talent.</p>
+</footer>
+
+<!-- CHATBOT (same as index) -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">...</div>
+
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder - Joblynk.live</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .resume-preview { font-family: 'Arial', sans-serif; }
+    .template-creative { font-family: 'Georgia', serif; border-left: 4px solid #f59e0b; }
+    .template-minimalist { font-family: 'Helvetica', sans-serif; color: #333; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">...</header>
+
+<section class="max-w-7xl mx-auto py-16 px-6">
+  <h2 class="text-3xl font-bold mb-8 text-center">Resume Builder</h2>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- EDITOR PANEL -->
+    <div class="bg-white p-6 rounded shadow-lg space-y-4">
+      <div class="flex gap-4 items-center">
+        <label class="font-semibold">Template:</label>
+        <select id="templateSelect" class="border p-2 rounded">
+          <option value="standard">Standard</option>
+          <option value="creative">Creative</option>
+          <option value="minimalist">Minimalist</option>
+        </select>
+        <button onclick="undo()" class="bg-slate-200 px-3 py-1 rounded">↩ Undo</button>
+        <button onclick="redo()" class="bg-slate-200 px-3 py-1 rounded">↪ Redo</button>
+        <button onclick="saveResume()" class="bg-green-600 text-white px-3 py-1 rounded">💾 Save</button>
+        <button onclick="downloadPDF()" class="bg-red-600 text-white px-3 py-1 rounded">📄 PDF</button>
+      </div>
+
+      <!-- Basic Info -->
+      <input type="text" id="fullName" placeholder="Full Name" value="Rahul Sharma" class="w-full p-2 border rounded">
+      <input type="text" id="email" placeholder="Email" value="rahul.sharma@email.com" class="w-full p-2 border rounded">
+      <input type="text" id="phone" placeholder="Phone" value="+91 98765 43210" class="w-full p-2 border rounded">
+      <input type="text" id="location" placeholder="Location" value="Mumbai, India" class="w-full p-2 border rounded">
+
+      <!-- Professional Summary with AI suggestions and character count -->
+      <div>
+        <label class="block font-semibold">Professional Summary <span id="summaryCount" class="text-sm text-slate-500">(0/200)</span></label>
+        <textarea id="summary" rows="3" class="w-full p-2 border rounded" maxlength="200">Dedicated hospitality professional with 5+ years of experience in guest relations and operations.</textarea>
+        <div class="flex gap-2 mt-2">
+          <button onclick="suggestSummary()" class="bg-yellow-500 text-sm px-3 py-1 rounded">✨ AI Suggest</button>
+          <button onclick="suggestSummaryVariation(1)" class="bg-slate-200 text-sm px-2 py-1 rounded">Variation 1</button>
+          <button onclick="suggestSummaryVariation(2)" class="bg-slate-200 text-sm px-2 py-1 rounded">Variation 2</button>
+        </div>
+      </div>
+
+      <!-- Key Skills (tag input) -->
+      <div>
+        <label class="block font-semibold">Key Skills (click to add)</label>
+        <div id="skillsTags" class="flex flex-wrap gap-2 mb-2">
+          <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Customer Service ✖</span>
+          <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Operations ✖</span>
+          <span class="bg-blue-100 px-3 py-1 rounded-full text-sm">Team Leadership ✖</span>
+        </div>
+        <input type="text" id="newSkill" placeholder="Add a skill and press Enter" class="w-full p-2 border rounded">
+      </div>
+
+      <!-- Structured Experience -->
+      <div>
+        <label class="block font-semibold">Experience</label>
+        <div id="experienceList" class="space-y-4">
+          <div class="exp-item border p-4 rounded relative">
+            <button class="absolute top-2 right-2 text-red-500" onclick="removeExp(this)">✖</button>
+            <input type="text" placeholder="Job Title" value="Front Desk Manager" class="w-full p-2 border rounded mb-2">
+            <input type="text" placeholder="Company" value="Grand Hotel" class="w-full p-2 border rounded mb-2">
+            <input type="text" placeholder="Dates (e.g., Jan 2020 - Present)" value="Jan 2020 - Present" class="w-full p-2 border rounded mb-2">
+            <textarea placeholder="Description" rows="2" class="w-full p-2 border rounded">Managed front desk operations, supervised 10 staff, increased guest satisfaction by 20%.</textarea>
+            <button onclick="suggestExpDescription(this)" class="bg-yellow-500 text-sm px-3 py-1 mt-2 rounded">✨ AI Suggest</button>
+          </div>
+        </div>
+        <button onclick="addExperience()" class="bg-slate-900 text-white px-4 py-2 rounded mt-2">+ Add Experience</button>
+      </div>
+
+      <!-- Custom Sections (Projects, Certifications, Awards) -->
+      <div>
+        <label class="block font-semibold">Custom Sections</label>
+        <select id="customSectionType" class="border p-2 rounded">
+          <option value="Projects">Projects</option>
+          <option value="Certifications">Certifications</option>
+          <option value="Awards">Awards & Recognition</option>
+        </select>
+        <button onclick="addCustomSection()" class="bg-slate-900 text-white px-4 py-2 rounded ml-2">+ Add</button>
+        <div id="customSections" class="mt-4 space-y-4"></div>
+      </div>
+    </div>
+
+    <!-- RESUME PREVIEW -->
+    <div class="bg-white p-6 rounded shadow-lg">
+      <h3 class="text-xl font-bold mb-4">Live Preview</h3>
+      <div id="resumePreview" class="resume-preview p-6 border rounded"></div>
+    </div>
+  </div>
+
+  <!-- Original Sample Content (optional) -->
+  <hr class="my-12">
+  <h3 class="text-2xl font-bold mb-4">Sample Cover Letter</h3>
+  <div class="bg-white p-6 rounded shadow">
+    <p>Dear Hiring Manager,</p>
+    <p>I am writing to express my interest in the Front Desk Manager position at your hotel. With over 5 years of experience in hospitality...</p>
+    <p>Sincerely, Rahul Sharma</p>
+  </div>
+
+  <h3 class="text-2xl font-bold mt-12 mb-4">Employer Data Sample</h3>
+  <div class="overflow-x-auto">
+    <table class="w-full border text-sm">
+      <thead class="bg-slate-200"><tr><th>Company</th><th>Industry</th><th>City</th><th>HR Email</th></tr></thead>
+      <tbody>
+        <tr><td>ABC Hotels</td><td>Hospitality</td><td>Mumbai</td><td>hr@abchotels.in</td></tr>
+        <!-- 19 more rows... (abbreviated) -->
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-4 text-sm">Actual employer data is shared in Excel format after payment.</p>
+</section>
+
+<footer class="bg-slate-900 text-white text-center p-6">...</footer>
+
+<!-- CHATBOT same as before -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">...</div>
+
+<script>
+  // ========== RESUME BUILDER STATE ==========
+  let resumeData = {
+    fullName: 'Rahul Sharma',
+    email: 'rahul.sharma@email.com',
+    phone: '+91 98765 43210',
+    location: 'Mumbai, India',
+    summary: 'Dedicated hospitality professional with 5+ years of experience in guest relations and operations.',
+    skills: ['Customer Service', 'Operations', 'Team Leadership'],
+    experience: [
+      { title: 'Front Desk Manager', company: 'Grand Hotel', dates: 'Jan 2020 - Present', description: 'Managed front desk operations, supervised 10 staff, increased guest satisfaction by 20%.' }
+    ],
+    customSections: [] // { type: 'Projects', items: [...] }
+  };
+  let history = [JSON.parse(JSON.stringify(resumeData))];
+  let historyIndex = 0;
+
+  function updatePreview() {
+    const template = document.getElementById('templateSelect').value;
+    let html = `<div class="${template === 'creative' ? 'template-creative' : template === 'minimalist' ? 'template-minimalist' : ''}">`;
+    html += `<h2 class="text-2xl font-bold">${resumeData.fullName}</h2>`;
+    html += `<p>${resumeData.email} | ${resumeData.phone} | ${resumeData.location}</p>`;
+    html += `<h3 class="font-bold mt-4">Professional Summary</h3><p>${resumeData.summary}</p>`;
+    html += `<h3 class="font-bold mt-4">Key Skills</h3><p>${resumeData.skills.join(', ')}</p>`;
+    html += `<h3 class="font-bold mt-4">Experience</h3>`;
+    resumeData.experience.forEach(exp => {
+      html += `<div><strong>${exp.title}</strong> at ${exp.company}<br>${exp.dates}<br>${exp.description}</div>`;
+    });
+    resumeData.customSections.forEach(section => {
+      html += `<h3 class="font-bold mt-4">${section.type}</h3>`;
+      section.items.forEach(item => {
+        html += `<div>${item}</div>`;
+      });
+    });
+    html += '</div>';
+    document.getElementById('resumePreview').innerHTML = html;
+  }
+
+  function saveState() {
+    history = history.slice(0, historyIndex + 1);
+    history.push(JSON.parse(JSON.stringify(resumeData)));
+    historyIndex++;
+  }
+
+  function undo() { if (historyIndex > 0) { historyIndex--; resumeData = JSON.parse(JSON.stringify(history[historyIndex])); updatePreview(); } }
+  function redo() { if (historyIndex < history.length - 1) { historyIndex++; resumeData = JSON.parse(JSON.stringify(history[historyIndex])); updatePreview(); } }
+
+  function saveResume() { localStorage.setItem('joblynkResume', JSON.stringify(resumeData)); alert('Resume saved!'); }
+
+  // Load from localStorage if exists
+  const saved = localStorage.getItem('joblynkResume');
+  if (saved) { resumeData = JSON.parse(saved); history = [resumeData]; historyIndex = 0; }
+
+  // Event listeners for inputs
+  document.getElementById('fullName').addEventListener('input', function(e) { resumeData.fullName = e.target.value; updatePreview(); });
+  document.getElementById('email').addEventListener('input', function(e) { resumeData.email = e.target.value; updatePreview(); });
+  document.getElementById('phone').addEventListener('input', function(e) { resumeData.phone = e.target.value; updatePreview(); });
+  document.getElementById('location').addEventListener('input', function(e) { resumeData.location = e.target.value; updatePreview(); });
+  document.getElementById('summary').addEventListener('input', function(e) { resumeData.summary = e.target.value; document.getElementById('summaryCount').innerText = `(${e.target.value.length}/200)`; updatePreview(); saveState(); });
+
+  // AI Suggestions (dummy)
+  function suggestSummary() {
+    document.getElementById('summary').value = 'Results-driven hospitality professional with expertise in guest relations, team management, and operational excellence. Proven track record of improving guest satisfaction scores.';
+    document.getElementById('summary').dispatchEvent(new Event('input'));
+  }
+  function suggestSummaryVariation(v) {
+    const variants = [
+      'Experienced hotel manager with strong leadership skills and a passion for delivering exceptional guest experiences.',
+      'Dedicated service professional seeking to leverage 6+ years of front office management experience in a challenging new role.'
+    ];
+    document.getElementById('summary').value = variants[v-1] || variants[0];
+    document.getElementById('summary').dispatchEvent(new Event('input'));
+  }
+
+  // Skills tags
+  function renderSkills() {
+    const container = document.getElementById('skillsTags');
+    container.innerHTML = '';
+    resumeData.skills.forEach(skill => {
+      const span = document.createElement('span');
+      span.className = 'bg-blue-100 px-3 py-1 rounded-full text-sm cursor-pointer';
+      span.innerText = skill + ' ✖';
+      span.onclick = () => { resumeData.skills = resumeData.skills.filter(s => s !== skill); renderSkills(); updatePreview(); saveState(); };
+      container.appendChild(span);
+    });
+  }
+  document.getElementById('newSkill').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      resumeData.skills.push(this.value.trim());
+      this.value = '';
+      renderSkills();
+      updatePreview();
+      saveState();
+    }
+  });
+
+  // Experience management
+  function addExperience() {
+    resumeData.experience.push({ title: '', company: '', dates: '', description: '' });
+    saveState();
+    renderExperience();
+  }
+  function removeExp(btn) {
+    const index = [...document.querySelectorAll('.exp-item')].indexOf(btn.closest('.exp-item'));
+    resumeData.experience.splice(index, 1);
+    saveState();
+    renderExperience();
+  }
+  function renderExperience() {
+    const container = document.getElementById('experienceList');
+    container.innerHTML = '';
+    resumeData.experience.forEach((exp, idx) => {
+      const div = document.createElement('div');
+      div.className = 'exp-item border p-4 rounded relative';
+      div.innerHTML = `
+        <button class="absolute top-2 right-2 text-red-500" onclick="removeExp(this)">✖</button>
+        <input type="text" placeholder="Job Title" value="${exp.title}" class="w-full p-2 border rounded mb-2" data-index="${idx}" data-field="title">
+        <input type="text" placeholder="Company" value="${exp.company}" class="w-full p-2 border rounded mb-2" data-index="${idx}" data-field="company">
+        <input type="text" placeholder="Dates" value="${exp.dates}" class="w-full p-2 border rounded mb-2" data-index="${idx}" data-field="dates">
+        <textarea placeholder="Description" rows="2" class="w-full p-2 border rounded" data-index="${idx}" data-field="description">${exp.description}</textarea>
+        <button onclick="suggestExpDescription(this)" class="bg-yellow-500 text-sm px-3 py-1 mt-2 rounded">✨ AI Suggest</button>
+      `;
+      container.appendChild(div);
+    });
+    // attach event listeners
+    document.querySelectorAll('.exp-item input, .exp-item textarea').forEach(el => {
+      el.addEventListener('input', function() {
+        const idx = this.dataset.index;
+        const field = this.dataset.field;
+        resumeData.experience[idx][field] = this.value;
+        updatePreview();
+      });
+    });
+  }
+
+  function suggestExpDescription(btn) {
+    const textarea = btn.previousElementSibling; // assuming structure
+    textarea.value = 'Led a team of 15, improved operational efficiency by 30%, and implemented new guest feedback system.';
+    textarea.dispatchEvent(new Event('input'));
+  }
+
+  // Custom sections
+  function addCustomSection() {
+    const type = document.getElementById('customSectionType').value;
+    resumeData.customSections.push({ type: type, items: [''] });
+    saveState();
+    renderCustomSections();
+  }
+  function renderCustomSections() {
+    const container = document.getElementById('customSections');
+    container.innerHTML = '';
+    resumeData.customSections.forEach((section, idx) => {
+      const div = document.createElement('div');
+      div.className = 'border p-4 rounded';
+      div.innerHTML = `<h4 class="font-semibold">${section.type}</h4>`;
+      section.items.forEach((item, i) => {
+        div.innerHTML += `<input type="text" value="${item}" class="w-full p-2 border rounded mb-2" data-section="${idx}" data-item="${i}">`;
+      });
+      div.innerHTML += `<button onclick="addCustomItem(${idx})" class="bg-slate-200 px-3 py-1 rounded text-sm">+ Add item</button>`;
+      container.appendChild(div);
+    });
+  }
+
+  function addCustomItem(sectionIdx) {
+    resumeData.customSections[sectionIdx].items.push('');
+    saveState();
+    renderCustomSections();
+    updatePreview();
+  }
+
+  // PDF download (using print)
+  function downloadPDF() {
+    window.print(); // simple, user can save as PDF
+  }
+
+  // Initialize
+  renderSkills();
+  renderExperience();
+  renderCustomSections();
+  updatePreview();
+  document.getElementById('summary').dispatchEvent(new Event('input'));
+</script>
+
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Portal - Joblynk.live</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">...</header>
+
+<section class="max-w-4xl mx-auto py-16 px-6">
+  <h2 class="text-3xl font-bold mb-4">Access Ready-to-Apply Candidates</h2>
+  <p class="mb-6">Employers can view curated candidate profiles submitted through Joblynk.live.</p>
+
+  <div class="bg-white p-6 rounded shadow mb-8">
+    <h3 class="text-xl font-bold mb-4">What Employers Receive</h3>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>Candidate name</li>
+      <li>Position applied for</li>
+      <li>Location</li>
+      <li>Contact details</li>
+      <li>Resume-ready profiles</li>
+    </ul>
+  </div>
+
+  <div class="bg-white p-6 rounded shadow mb-8">
+    <h3 class="text-xl font-bold mb-4">Data Format & Secure Access</h3>
+    <p>Candidate information is shared in a secure Excel format. Easy to filter, sort, and download. Updated periodically.</p>
+  </div>
+
+  <!-- Gated Form -->
+  <form id="employerForm" class="bg-white p-6 rounded shadow space-y-4">
+    <h3 class="text-xl font-bold mb-2">Request Candidate List</h3>
+    <input type="text" placeholder="Company Name" required class="w-full p-3 border rounded">
+    <input type="text" placeholder="Recruiter Name" required class="w-full p-3 border rounded">
+    <input type="email" placeholder="Work Email" required class="w-full p-3 border rounded">
+    <input type="text" placeholder="Roles Hiring For" required class="w-full p-3 border rounded">
+    <button type="submit" class="w-full bg-yellow-500 text-slate-900 font-semibold py-3 rounded">Request Candidate List</button>
+  </form>
+
+  <!-- Search/Filter Simulation -->
+  <div class="mt-8 bg-white p-6 rounded shadow">
+    <h3 class="text-xl font-bold mb-4">Search Candidates</h3>
+    <div class="flex gap-4">
+      <select class="border p-2 rounded">
+        <option>Skill</option>
+        <option>Hospitality</option>
+        <option>Operations</option>
+        <option>Management</option>
+      </select>
+      <select class="border p-2 rounded">
+        <option>Experience</option>
+        <option>0-2 years</option>
+        <option>2-5 years</option>
+        <option>5+ years</option>
+      </select>
+      <button class="bg-slate-900 text-white px-4 py-2 rounded">Filter</button>
+    </div>
+    <p class="mt-4 text-sm text-slate-500">(Demo: full search available after request)</p>
+  </div>
+
+  <p class="mt-6 text-sm">Data is shared only for recruitment purposes. Employers must not misuse or resell candidate information.</p>
+</section>
+
+<footer class="bg-slate-900 text-white text-center p-6">...</footer>
+
+<!-- CHATBOT same as before -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">...</div>
+
+<script>
+  document.getElementById('employerForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Credentials verifying. Your Excel download link will be emailed shortly.');
+    trackConversion('employer_request');
+  });
+</script>
 
 </body>
 </html>
