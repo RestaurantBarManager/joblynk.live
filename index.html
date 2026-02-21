@@ -1,48 +1,221 @@
-# Joblynk.live Deployment Master Guide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joblynk.live – Connecting Talent with Opportunity</title>
+    <meta name="description" content="Affordable job support platform for hospitality and service professionals across India.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google AdSense (optional) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans">
+<header class="bg-slate-900 text-white p-4 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">Joblynk.live</h1>
+        <nav class="hidden md:block space-x-6">
+            <a href="index.html" class="hover:text-yellow-400">Home</a>
+            <a href="jobs.html" class="hover:text-yellow-400">Latest Jobs</a>
+            <a href="pay.html" class="hover:text-yellow-400">Pay Portal</a>
+            <a href="samples.html" class="hover:text-yellow-400">Resume Builder</a>
+            <a href="employer.html" class="hover:text-yellow-400">Employer Portal</a>
+            <a href="disclaimer.html" class="hover:text-yellow-400">Disclaimer</a>
+            <!-- Simulated login state (logged in as candidate) -->
+            <span class="text-yellow-400">John Doe</span>
+            <a href="profile.html" class="hover:text-yellow-400">Profile</a>
+            <a href="profile-edit.html" class="hover:text-yellow-400">Edit Profile</a>
+            <a href="saved-jobs.html" class="hover:text-yellow-400">Saved Jobs</a>
+            <a href="my-applications.html" class="hover:text-yellow-400">My Applications</a>
+            <a href="login.html" class="hover:text-yellow-400">Logout</a>
+        </nav>
+        <a href="pay.html#pricing" class="bg-yellow-500 text-slate-900 px-4 py-2 rounded font-semibold">Get Started</a>
+    </div>
+</header>
+<footer class="bg-slate-900 text-white text-center p-6">
+    <p>Joblynk.live | Career support made practical. | Connecting Employers with Job-Ready Talent.</p>
+</footer>
+<!-- Chatbot -->
+<div id="chatbotContainer" class="fixed bottom-6 right-6 z-50">
+    <button onclick="toggleChat()" class="bg-yellow-500 text-slate-900 p-4 rounded-full shadow-lg hover:scale-105 transition">💬</button>
+    <div id="chatWindow" class="hidden mt-3 w-80 md:w-96 bg-white rounded-xl shadow-2xl border overflow-hidden flex flex-col">
+        <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
+            <h4 class="font-semibold">Joblynk.live Assistant</h4>
+            <select id="languageToggle" class="text-black text-xs rounded p-1">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
+        <div id="chatMessages" class="p-4 space-y-3 h-80 overflow-y-auto text-sm"></div>
+        <div class="p-3 border-t space-y-2">
+            <div class="flex gap-2">
+                <button onclick="selectPlan(49)" class="flex-1 bg-slate-900 text-white py-2 rounded text-sm">₹49 Plan</button>
+                <button onclick="selectPlan(99)" class="flex-1 bg-yellow-500 text-slate-900 py-2 rounded text-sm font-semibold">₹99 Plan</button>
+            </div>
+            <button onclick="toggleEmployerMode()" class="w-full border py-2 rounded text-sm">Switch to Employer Mode</button>
+            <div class="flex gap-2 text-xs">
+                <button onclick="askBot('how update details')" class="bg-slate-200 px-2 py-1 rounded">How to update details?</button>
+                <button onclick="askBot('plan benefits')" class="bg-slate-200 px-2 py-1 rounded">Plan benefits?</button>
+                <button onclick="askBot('payment options')" class="bg-slate-200 px-2 py-1 rounded">Payment options?</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>…</head>
+<body>
+<!-- include header -->
 
-## 1. Local Development
-- Install XAMPP, start Apache & MySQL.
-- Create folder `C:\xampp\htdocs\joblynk` and copy all project files.
-- Create database `joblynk` in phpMyAdmin, import SQL schema.
-- Edit `includes/db.php` with local credentials (root, empty password).
-- Test at `http://localhost/joblynk`.
+<div class="max-w-6xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-bold mb-8">Latest Hospitality Jobs in India</h1>
+    <!-- Filters (same as before) -->
+    <div class="bg-white p-4 rounded-lg shadow mb-8 flex flex-wrap gap-4">
+        <input type="text" id="searchInput" placeholder="Search jobs…" class="flex-1 p-2 border rounded">
+        <select id="categoryFilter" class="p-2 border rounded">
+            <option value="">All Categories</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Front Office">Front Office</option>
+            <option value="Housekeeping">Housekeeping</option>
+            <option value="Management">Management</option>
+            <option value="Service">Service</option>
+        </select>
+        <select id="locationFilter" class="p-2 border rounded">
+            <option value="">All Locations</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+        </select>
+        <button onclick="filterJobs()" class="bg-yellow-500 px-6 py-2 rounded">Filter</button>
+    </div>
 
-## 2. GitHub Setup
-- `cd C:\xampp\htdocs\joblynk`
-- `git init`
-- Create `.gitignore` with: includes/db.php, uploads/, .vscode/, *.log
-- `git add .` and `git commit -m "Initial commit"`
-- Create repo on GitHub (no README), then: 
+    <!-- Job Cards (static example) -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded shadow">
+            <h3 class="text-xl font-bold mb-2"><a href="job-detail.html" class="text-blue-600 hover:underline">Front Desk Manager</a></h3>
+            <p class="text-gray-600"><a href="company.html?name=Taj+Hotels" class="hover:underline">Taj Hotels</a> - Mumbai</p>
+            <p class="text-sm text-gray-500 mt-2">Posted 2 days ago</p>
+            <span class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mt-2">Full-time</span>
+        </div>
+        <!-- more job cards... -->
+    </div>
 
-## 3. Choose Hosting (PHP + MySQL)
-- Sign up at Hostinger, Bluehost, A2 Hosting, etc.
-- Get FTP/cPanel access.
+    <!-- Pagination (static) -->
+    <div class="flex justify-center gap-2 mt-8">
+        <button class="px-3 py-1 border rounded">1</button>
+        <button class="px-3 py-1 border rounded bg-yellow-500">2</button>
+        <button class="px-3 py-1 border rounded">3</button>
+    </div>
+</div>
 
-## 4. Deploy Files
-- **Option A (FTP):** Upload all files except `includes/db.php` to `public_html`.
-- **Option B (Git):** Use cPanel Git Version Control to clone repo into `public_html`.
+<!-- include footer -->
+<script>
+    // dummy filter function (no backend)
+    function filterJobs() { alert('Filtering is for demo only.'); }
+</script>
+</body>
+</html>
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <div class="bg-white p-8 rounded shadow">
+        <h1 class="text-3xl font-bold mb-2">Front Desk Manager</h1>
+        <p class="text-xl text-gray-700 mb-2">
+            <a href="company.html?name=Taj+Hotels" class="text-blue-600 hover:underline">Taj Hotels</a> - Mumbai
+        </p>
+        <p class="text-sm text-gray-500 mb-4">Posted 15 Mar 2025</p>
+        <div class="mb-6">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Full-time</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Front Office</span>
+            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">₹40k - ₹60k</span>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Job Description</h3>
+        <p class="text-gray-700 mb-6">Manage front desk operations, supervise staff, handle guest inquiries...</p>
 
-## 5. Remote Database
-- Create database in cPanel, note name/user/password.
-- Import local SQL into remote database.
-- Create `includes/db.php` with remote credentials and upload manually.
-
-## 6. Permissions
-- Folders: 755, Files: 644.
-- Ensure `uploads/` is writable (755 or 775).
-
-## 7. Cron Job (Job Alerts)
-- In cPanel Cron Jobs, add daily command:
-`/usr/bin/php /home/username/public_html/cron/send-alerts.php >> /home/username/logs/alerts.log 2>&1`
-
-## 8. Domain
-- Point domain to hosting (update nameservers or A record).
-- Enable SSL (free via Let's Encrypt).
-
-## 9. Test Everything
-- Register, login, post jobs, apply, save, review, payments.
-
-## 10. Maintenance
-- Never commit `db.php`.
-- Backup regularly.
-- Pull updates: `git pull origin main` on server (if using Git deployment).
+        <!-- Apply button (static) -->
+        <button class="bg-yellow-500 text-slate-900 px-6 py-3 rounded font-semibold">Apply Now</button>
+        <!-- Save button -->
+        <button class="bg-blue-500 text-white px-4 py-2 rounded ml-2">☆ Save Job</button>
+    </div>
+</div>
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <h1 class="text-3xl font-bold mb-2">Taj Hotels</h1>
+    <div class="mb-6">
+        <span class="text-2xl font-semibold">4.2 / 5</span>
+        <span class="text-gray-600">(28 reviews)</span>
+    </div>
+    <a href="submit-review.html?company=Taj+Hotels" class="bg-yellow-500 px-4 py-2 rounded inline-block mb-6">Write a Review</a>
+    <h2 class="text-2xl font-bold mb-4">Reviews</h2>
+    <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between">
+                <span class="font-semibold">Rahul S.</span>
+                <span class="text-yellow-500">★★★★☆</span>
+            </div>
+            <p class="text-gray-700">Great work culture and growth opportunities.</p>
+        </div>
+        <!-- more reviews -->
+    </div>
+</div>
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8">My Profile</h2>
+    <div class="bg-white p-6 rounded shadow">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> john@example.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Location:</strong> Mumbai</p>
+        <p><strong>Experience:</strong> 5 years</p>
+        <p><strong>Skills:</strong> Customer Service, Operations, Team Leadership</p>
+        <p><strong>Resume:</strong> <a href="#" class="text-blue-600">View Resume</a></p>
+        <a href="profile-edit.html" class="bg-yellow-500 px-4 py-2 rounded inline-block mt-4">Edit Profile</a>
+    </div>
+</div>
+<div class="max-w-2xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8">Edit Profile</h2>
+    <form class="bg-white p-6 rounded shadow space-y-4">
+        <input type="text" value="John Doe" placeholder="Full Name" class="w-full p-2 border rounded">
+        <input type="email" value="john@example.com" placeholder="Email" class="w-full p-2 border rounded">
+        <input type="tel" value="+91 98765 43210" placeholder="Phone" class="w-full p-2 border rounded">
+        <input type="text" value="Mumbai" placeholder="Location" class="w-full p-2 border rounded">
+        <input type="number" value="5" placeholder="Years of Experience" class="w-full p-2 border rounded">
+        <textarea placeholder="Skills" rows="3" class="w-full p-2 border rounded">Customer Service, Operations, Team Leadership</textarea>
+        <div>
+            <label class="block mb-1">Preferred Job Categories</label>
+            <label><input type="checkbox" checked> Kitchen</label>
+            <label><input type="checkbox" checked> Front Office</label>
+            <!-- more -->
+        </div>
+        <div>
+            <label>Upload Resume</label>
+            <input type="file" class="w-full p-2 border rounded">
+        </div>
+        <button type="submit" class="bg-yellow-500 px-6 py-2 rounded font-semibold">Save Changes</button>
+    </form>
+</div>
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8">My Saved Jobs</h2>
+    <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow flex justify-between">
+            <div>
+                <h3 class="text-xl font-semibold"><a href="job-detail.html" class="text-blue-600">Front Desk Manager</a></h3>
+                <p class="text-gray-600">Taj Hotels - Mumbai</p>
+            </div>
+            <button class="text-red-600">Remove</button>
+        </div>
+        <!-- more -->
+    </div>
+</div>
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-8">My Applications</h2>
+    <div class="space-y-4">
+        <div class="bg-white p-4 rounded shadow flex justify-between">
+            <div>
+                <h3 class="text-xl font-semibold"><a href="job-detail.html" class="text-blue-600">Front Desk Manager</a></h3>
+                <p class="text-gray-600">Taj Hotels - Mumbai</p>
+                <p class="text-sm text-gray-500">Applied on 20 Mar 2025</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-sm bg-yellow-100 text-yellow-800">Applied</span>
+        </div>
+        <!-- more with different statuses -->
+    </div>
+</div>
